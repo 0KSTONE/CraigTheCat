@@ -44,6 +44,8 @@ def main():
             print("Craig is playing with a toy mouse!")
             time.sleep(2)
             print("Craig is tired from playing!")
+            
+            Craig.play()
             time.sleep(2)
         elif userChoice == "2":
             print("Craig is hungry!")
@@ -53,6 +55,8 @@ def main():
             print("Craig is full!")
             time.sleep(2)
             print("Craig is taking a nap!")
+
+            Craig.feed()
             time.sleep(2)
 
         elif userChoice == "3":
@@ -63,6 +67,8 @@ def main():
             print("Craig is dreaming!")
             time.sleep(2)
             print("Craig is awake!")
+
+            Craig.sleep()
             time.sleep(2)
 
         elif userChoice == "Q" or userChoice == "q":
