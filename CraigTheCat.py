@@ -12,14 +12,17 @@ class Craig:
         self.hunger += 3
         self.tiredness += 3
         self.happiness += r.randint(3, 7)
+        Craig.checkStatus()
     def feed(self):
         self.hunger -= 5
         self.tiredness += 1
         self.happiness += 1
+        Craig.checkStatus()
     def sleep(self): 
         self.hunger += 2
         self.tiredness -= 5
         self.happiness += 2
+        Craig.checkStatus()
     def checkStatus(self):
         self.hunger = max(0, min(self.hunger, 10))
         self.tiredness = max(0, min(self.tiredness, 10))
@@ -33,7 +36,7 @@ def main():
         print("Mow meow mow meow meow meow!") #Mow meow * 2
         time.sleep(2)
         print ("what would you like to do?")
-        userChoice = input("1. Play with Craig\n2. Feed Craig\n3. Sleep\nQuit(Q) \n")
+        userChoice = input("1. Play with Craig\n2. Feed Craig\n3. Sleep\n4. Craig\nQuit(Q) \n")
         if userChoice == "1":
             print("Craig is excited to play with you!")
             time.sleep(2)
@@ -69,6 +72,13 @@ def main():
             print("Craig is awake!")
 
             Craig.sleep()
+            time.sleep(2)
+        
+        elif userChoice == "4":
+            print("Craig's current status:")
+            print(f"Hunger: {Craig.hunger}")
+            print(f"Tiredness: {Craig.tiredness}")
+            print(f"Happiness: {Craig.happiness}")
             time.sleep(2)
 
         elif userChoice == "Q" or userChoice == "q":
